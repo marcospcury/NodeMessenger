@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+#dialog-historico{
+  height: 300px;
+  overflow: scroll;
+}
+
+textarea{
+  width: 370px;
+  height: 120px;
+}

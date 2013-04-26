@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  span Apelido:
+    input(type="text", id="autor")
+  #dialog-conversa(title="Conversa")
+    #dialog-historico
+    textarea(id='msg')
+    button(id="botao-enviar") Enviar

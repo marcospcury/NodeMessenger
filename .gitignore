@@ -18,6 +18,7 @@ local.properties
 node_modules/
 *.sublime-project
 *.sublime-workspace
+*.coffee
 
 # External tool builders
 .externalToolBuilders/
