@@ -4,6 +4,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , sanitize = require('validator').sanitize
+  , redis = require("redis")
+  , socketio = require('socket.io')
   , azure = require('azure');
 
 // var tableService = azure.createTableService('azuresummitbrasil2013', '');
@@ -40,13 +42,15 @@ var server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
-var io = require('socket.io').listen(server);
+var io = socketio.listen(server);
 io.configure(function(){
   io.set('transports', ['xhr-polling']);
   io.set('polling duration', 30);
+  //io.set("store", new socketio.RedisStore);
 })
 
 io.sockets.on('connection', function (socket){
+  console.log(socket.id);
   socket.on('message', function(data){
     io.sockets.emit('news', data);
 
