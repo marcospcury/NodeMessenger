@@ -12,7 +12,7 @@ $(function() {
     width: 400
   });
   $('#msg').keypress(function(event) {
-    if (event.which === 13) {
+    if (event.which === 13 && !event.shiftKey) {
       dispararMensagem();
       return event.preventDefault();
     }
@@ -45,6 +45,7 @@ show = function(data) {
     item = dictSmile[_i];
     textoMensagem = replaceAll(textoMensagem, item.text, item.image);
   }
+  textoMensagem = replaceAll(textoMensagem, "\n", "<br />");
   $('#dialog-historico').append("<span>" + data.author + ":<br />&nbsp;&nbsp;" + textoMensagem + "</span><br />");
   return $('#dialog-historico').animate({
     scrollTop: $('#dialog-historico').prop("scrollHeight")
@@ -116,7 +117,7 @@ dictSmile.push({
 });
 
 dictSmile.push({
-  text: "|)",
+  text: "zzzz",
   image: "<img src='/images/emoticons/sleeping.gif'>"
 });
 
