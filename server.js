@@ -23,7 +23,7 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.set("view options", {layout: false});
   app.use(express.favicon());
-  app.use(express.logger('dev'));
+  //app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
@@ -50,20 +50,13 @@ io.configure(function(){
 })
 
 io.sockets.on('connection', function (socket){
-  console.log(socket.id);
+  console.log("Conectado " + socket.id);
+
   socket.on('message', function(data){
     io.sockets.emit('news', data);
-
-    // var entity = {
-    //   PartitionKey: 'news',
-    //   RowKey: (new Date()).getTime() + "_" + Math.floor(Math.random() * 100),
-    //   Message: data
-    // };
-    // tableService.insertEntity('messages', entity, function(error){
-    //   if (!error){
-    //     //ok!
-    //   }
-    // });
-
   });
+
+  socket.on('disconnect', function () {
+        console.log('DISCONNESSO!!! ');
+    });
 });

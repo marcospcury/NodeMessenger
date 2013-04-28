@@ -1,0 +1,433 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'msnodesql' ]
+2 info using npm@1.2.18
+3 info using node@v0.10.4
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\package.json
+6 warn package.json application-name@0.0.1 No README.md file found!
+7 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\azure\package.json
+8 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\coffee-script\package.json
+9 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\express\package.json
+10 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\jade\package.json
+11 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\redis\package.json
+12 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\socket.io\package.json
+13 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\validator\package.json
+14 verbose from cache C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\package.json
+15 verbose readDependencies using package.json deps
+16 verbose cache add [ 'msnodesql', null ]
+17 verbose cache add name=undefined spec="msnodesql" args=["msnodesql",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'msnodesql',
+18 verbose parsed url   path: 'msnodesql',
+18 verbose parsed url   href: 'msnodesql' }
+19 silly lockFile 36f1ebb8-msnodesql msnodesql
+20 verbose lock msnodesql C:\Users\Cury\AppData\Roaming\npm-cache\36f1ebb8-msnodesql.lock
+21 silly lockFile 36f1ebb8-msnodesql msnodesql
+22 silly lockFile 36f1ebb8-msnodesql msnodesql
+23 verbose addNamed [ 'msnodesql', '' ]
+24 verbose addNamed [ null, '' ]
+25 silly lockFile 0cd57691-msnodesql msnodesql@
+26 verbose lock msnodesql@ C:\Users\Cury\AppData\Roaming\npm-cache\0cd57691-msnodesql.lock
+27 silly addNameRange { name: 'msnodesql', range: '', hasData: false }
+28 verbose url raw msnodesql
+29 verbose url resolving [ 'https://registry.npmjs.org/', './msnodesql' ]
+30 verbose url resolved https://registry.npmjs.org/msnodesql
+31 info trying registry request attempt 1 at 00:12:59
+32 http GET https://registry.npmjs.org/msnodesql
+33 http 200 https://registry.npmjs.org/msnodesql
+34 silly registry.get cb [ 200,
+34 silly registry.get   { vary: 'Accept',
+34 silly registry.get     server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+34 silly registry.get     etag: '"9PIY5T8SUSVMI6HSH3CQLK5UP"',
+34 silly registry.get     date: 'Sun, 28 Apr 2013 03:12:58 GMT',
+34 silly registry.get     'content-type': 'application/json',
+34 silly registry.get     'content-length': '13248' } ]
+35 silly addNameRange number 2 { name: 'msnodesql', range: '', hasData: true }
+36 silly addNameRange versions [ 'msnodesql', [ '0.1.0', '0.2.0', '0.2.1' ] ]
+37 verbose addNamed [ 'msnodesql', '0.2.1' ]
+38 verbose addNamed [ '0.2.1', '0.2.1' ]
+39 silly lockFile 4e0afecd-msnodesql-0-2-1 msnodesql@0.2.1
+40 verbose lock msnodesql@0.2.1 C:\Users\Cury\AppData\Roaming\npm-cache\4e0afecd-msnodesql-0-2-1.lock
+41 silly lockFile 02dc1593-rg-msnodesql-msnodesql-0-2-1-tgz https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz
+42 verbose lock https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz C:\Users\Cury\AppData\Roaming\npm-cache\02dc1593-rg-msnodesql-msnodesql-0-2-1-tgz.lock
+43 verbose addRemoteTarball [ 'https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz',
+43 verbose addRemoteTarball   '3ce8ade4a8c016a9aa9f942810135a73c0f2c8eb' ]
+44 info retry fetch attempt 1 at 00:13:01
+45 verbose fetch to= C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz
+46 http GET https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz
+47 http 200 https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz
+48 silly shasum updated bytes 65536
+49 silly shasum updated bytes 5998
+50 info shasum 3ce8ade4a8c016a9aa9f942810135a73c0f2c8eb
+50 info shasum C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz
+51 verbose tar unpack C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz
+52 silly lockFile 5b8f8b24-179-0-039964065654203296-package C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+53 verbose lock C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package C:\Users\Cury\AppData\Roaming\npm-cache\5b8f8b24-179-0-039964065654203296-package.lock
+54 silly lockFile 58bcb9ad-179-0-039964065654203296-tmp-tgz C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz
+55 verbose lock C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz C:\Users\Cury\AppData\Roaming\npm-cache\58bcb9ad-179-0-039964065654203296-tmp-tgz.lock
+56 silly gunzTarPerm modes [ '755', '644' ]
+57 silly gunzTarPerm extractEntry package.json
+58 silly gunzTarPerm extractEntry .npmignore
+59 silly gunzTarPerm extractEntry README.md
+60 silly gunzTarPerm extractEntry LICENSE
+61 silly gunzTarPerm extractEntry key
+62 silly gunzTarPerm extractEntry lib/sql.js
+63 silly gunzTarPerm extractEntry lib/sqlserver.native.js
+64 silly gunzTarPerm extractEntry binding.gyp
+65 silly gunzTarPerm extractEntry CONTRIBUTORS
+66 silly gunzTarPerm extractEntry CONTRIBUTING.md
+67 silly gunzTarPerm extractEntry scripts/install.js
+68 silly gunzTarPerm extractEntry src/OdbcHandle.h
+69 silly gunzTarPerm extractEntry src/Column.cpp
+70 silly gunzTarPerm extractEntry src/Connection.cpp
+71 silly gunzTarPerm extractEntry src/Connection.h
+72 silly gunzTarPerm extractEntry src/CriticalSection.h
+73 silly gunzTarPerm extractEntry src/OdbcConnection.cpp
+74 silly gunzTarPerm extractEntry src/OdbcConnection.h
+75 silly gunzTarPerm extractEntry src/OdbcConnectionBridge.h
+76 silly gunzTarPerm extractEntry src/OdbcError.cpp
+77 silly gunzTarPerm extractEntry src/OdbcError.h
+78 silly gunzTarPerm extractEntry src/Column.h
+79 silly gunzTarPerm extractEntry src/OdbcOperation.cpp
+80 silly gunzTarPerm extractEntry src/OdbcOperation.h
+81 silly gunzTarPerm extractEntry src/Operation.h
+82 silly gunzTarPerm extractEntry src/ResultSet.cpp
+83 silly gunzTarPerm extractEntry src/ResultSet.h
+84 silly gunzTarPerm extractEntry src/sqlncli.h
+85 silly gunzTarPerm extractEntry src/stdafx.cpp
+86 silly gunzTarPerm extractEntry src/stdafx.h
+87 silly gunzTarPerm extractEntry src/Utility.cpp
+88 silly gunzTarPerm extractEntry src/Utility.h
+89 silly gunzTarPerm extractEntry test/CommonTestFunctions.js
+90 silly gunzTarPerm extractEntry test/connect.js
+91 silly gunzTarPerm extractEntry test/datatypes.js
+92 silly gunzTarPerm extractEntry test/dates.js
+93 silly gunzTarPerm extractEntry test/compoundqueries.js
+94 silly gunzTarPerm extractEntry test/query.js
+95 silly gunzTarPerm extractEntry test/runtests.js
+96 silly gunzTarPerm extractEntry test/test-config.js
+97 silly gunzTarPerm extractEntry test/txn.js
+98 silly gunzTarPerm extractEntry test/params.js
+99 silly gunzTarPerm extractEntry test/testlist.txt
+100 verbose read json C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package\package.json
+101 silly lockFile 5b8f8b24-179-0-039964065654203296-package C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+102 silly lockFile 5b8f8b24-179-0-039964065654203296-package C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+103 silly lockFile 58bcb9ad-179-0-039964065654203296-tmp-tgz C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz
+104 silly lockFile 58bcb9ad-179-0-039964065654203296-tmp-tgz C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\tmp.tgz
+105 verbose from cache C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package\package.json
+106 verbose tar pack [ 'C:\\Users\\Cury\\AppData\\Roaming\\npm-cache\\msnodesql\\0.2.1\\package.tgz',
+106 verbose tar pack   'C:\\Users\\Cury\\AppData\\Local\\Temp\\npm-7276\\1367118781179-0.039964065654203296\\package' ]
+107 verbose tarball C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+108 verbose folder C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+109 silly lockFile 5b8f8b24-179-0-039964065654203296-package C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+110 verbose lock C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package C:\Users\Cury\AppData\Roaming\npm-cache\5b8f8b24-179-0-039964065654203296-package.lock
+111 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+112 verbose lock C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz C:\Users\Cury\AppData\Roaming\npm-cache\d56e5ab5-ache-msnodesql-0-2-1-package-tgz.lock
+113 silly lockFile 5b8f8b24-179-0-039964065654203296-package C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+114 silly lockFile 5b8f8b24-179-0-039964065654203296-package C:\Users\Cury\AppData\Local\Temp\npm-7276\1367118781179-0.039964065654203296\package
+115 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+116 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+117 silly lockFile c7644943-pm-cache-msnodesql-0-2-1-package C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package
+118 verbose lock C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package C:\Users\Cury\AppData\Roaming\npm-cache\c7644943-pm-cache-msnodesql-0-2-1-package.lock
+119 silly lockFile c7644943-pm-cache-msnodesql-0-2-1-package C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package
+120 silly lockFile c7644943-pm-cache-msnodesql-0-2-1-package C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package
+121 verbose tar unpack C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+122 silly lockFile c7644943-pm-cache-msnodesql-0-2-1-package C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package
+123 verbose lock C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package C:\Users\Cury\AppData\Roaming\npm-cache\c7644943-pm-cache-msnodesql-0-2-1-package.lock
+124 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+125 verbose lock C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz C:\Users\Cury\AppData\Roaming\npm-cache\d56e5ab5-ache-msnodesql-0-2-1-package-tgz.lock
+126 silly gunzTarPerm modes [ '755', '644' ]
+127 silly gunzTarPerm extractEntry package.json
+128 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+129 silly gunzTarPerm extractEntry .npmignore
+130 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+131 silly gunzTarPerm extractEntry README.md
+132 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+133 silly gunzTarPerm extractEntry LICENSE
+134 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+135 silly gunzTarPerm extractEntry key
+136 silly gunzTarPerm modified mode [ 'key', 438, 420 ]
+137 silly gunzTarPerm extractEntry lib/sql.js
+138 silly gunzTarPerm modified mode [ 'lib/sql.js', 438, 420 ]
+139 silly gunzTarPerm extractEntry lib/sqlserver.native.js
+140 silly gunzTarPerm modified mode [ 'lib/sqlserver.native.js', 438, 420 ]
+141 silly gunzTarPerm extractEntry binding.gyp
+142 silly gunzTarPerm modified mode [ 'binding.gyp', 438, 420 ]
+143 silly gunzTarPerm extractEntry CONTRIBUTORS
+144 silly gunzTarPerm modified mode [ 'CONTRIBUTORS', 438, 420 ]
+145 silly gunzTarPerm extractEntry CONTRIBUTING.md
+146 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 438, 420 ]
+147 silly gunzTarPerm extractEntry scripts/install.js
+148 silly gunzTarPerm modified mode [ 'scripts/install.js', 438, 420 ]
+149 silly gunzTarPerm extractEntry src/OdbcHandle.h
+150 silly gunzTarPerm modified mode [ 'src/OdbcHandle.h', 438, 420 ]
+151 silly gunzTarPerm extractEntry src/Column.cpp
+152 silly gunzTarPerm modified mode [ 'src/Column.cpp', 438, 420 ]
+153 silly gunzTarPerm extractEntry src/Connection.cpp
+154 silly gunzTarPerm modified mode [ 'src/Connection.cpp', 438, 420 ]
+155 silly gunzTarPerm extractEntry src/Connection.h
+156 silly gunzTarPerm modified mode [ 'src/Connection.h', 438, 420 ]
+157 silly gunzTarPerm extractEntry src/CriticalSection.h
+158 silly gunzTarPerm modified mode [ 'src/CriticalSection.h', 438, 420 ]
+159 silly gunzTarPerm extractEntry src/OdbcConnection.cpp
+160 silly gunzTarPerm modified mode [ 'src/OdbcConnection.cpp', 438, 420 ]
+161 silly gunzTarPerm extractEntry src/OdbcConnection.h
+162 silly gunzTarPerm modified mode [ 'src/OdbcConnection.h', 438, 420 ]
+163 silly gunzTarPerm extractEntry src/OdbcConnectionBridge.h
+164 silly gunzTarPerm modified mode [ 'src/OdbcConnectionBridge.h', 438, 420 ]
+165 silly gunzTarPerm extractEntry src/OdbcError.cpp
+166 silly gunzTarPerm modified mode [ 'src/OdbcError.cpp', 438, 420 ]
+167 silly gunzTarPerm extractEntry src/OdbcError.h
+168 silly gunzTarPerm modified mode [ 'src/OdbcError.h', 438, 420 ]
+169 silly gunzTarPerm extractEntry src/Column.h
+170 silly gunzTarPerm modified mode [ 'src/Column.h', 438, 420 ]
+171 silly gunzTarPerm extractEntry src/OdbcOperation.cpp
+172 silly gunzTarPerm modified mode [ 'src/OdbcOperation.cpp', 438, 420 ]
+173 silly gunzTarPerm extractEntry src/OdbcOperation.h
+174 silly gunzTarPerm modified mode [ 'src/OdbcOperation.h', 438, 420 ]
+175 silly gunzTarPerm extractEntry src/Operation.h
+176 silly gunzTarPerm modified mode [ 'src/Operation.h', 438, 420 ]
+177 silly gunzTarPerm extractEntry src/ResultSet.cpp
+178 silly gunzTarPerm modified mode [ 'src/ResultSet.cpp', 438, 420 ]
+179 silly gunzTarPerm extractEntry src/ResultSet.h
+180 silly gunzTarPerm modified mode [ 'src/ResultSet.h', 438, 420 ]
+181 silly gunzTarPerm extractEntry src/sqlncli.h
+182 silly gunzTarPerm modified mode [ 'src/sqlncli.h', 438, 420 ]
+183 silly gunzTarPerm extractEntry src/stdafx.cpp
+184 silly gunzTarPerm modified mode [ 'src/stdafx.cpp', 438, 420 ]
+185 silly gunzTarPerm extractEntry src/stdafx.h
+186 silly gunzTarPerm modified mode [ 'src/stdafx.h', 438, 420 ]
+187 silly gunzTarPerm extractEntry src/Utility.cpp
+188 silly gunzTarPerm modified mode [ 'src/Utility.cpp', 438, 420 ]
+189 silly gunzTarPerm extractEntry src/Utility.h
+190 silly gunzTarPerm modified mode [ 'src/Utility.h', 438, 420 ]
+191 silly gunzTarPerm extractEntry test/CommonTestFunctions.js
+192 silly gunzTarPerm modified mode [ 'test/CommonTestFunctions.js', 438, 420 ]
+193 silly gunzTarPerm extractEntry test/connect.js
+194 silly gunzTarPerm modified mode [ 'test/connect.js', 438, 420 ]
+195 silly gunzTarPerm extractEntry test/datatypes.js
+196 silly gunzTarPerm modified mode [ 'test/datatypes.js', 438, 420 ]
+197 silly gunzTarPerm extractEntry test/dates.js
+198 silly gunzTarPerm modified mode [ 'test/dates.js', 438, 420 ]
+199 silly gunzTarPerm extractEntry test/compoundqueries.js
+200 silly gunzTarPerm modified mode [ 'test/compoundqueries.js', 438, 420 ]
+201 silly gunzTarPerm extractEntry test/query.js
+202 silly gunzTarPerm modified mode [ 'test/query.js', 438, 420 ]
+203 silly gunzTarPerm extractEntry test/runtests.js
+204 silly gunzTarPerm modified mode [ 'test/runtests.js', 438, 420 ]
+205 silly gunzTarPerm extractEntry test/test-config.js
+206 silly gunzTarPerm modified mode [ 'test/test-config.js', 438, 420 ]
+207 silly gunzTarPerm extractEntry test/txn.js
+208 silly gunzTarPerm modified mode [ 'test/txn.js', 438, 420 ]
+209 silly gunzTarPerm extractEntry test/params.js
+210 silly gunzTarPerm modified mode [ 'test/params.js', 438, 420 ]
+211 silly gunzTarPerm extractEntry test/testlist.txt
+212 silly gunzTarPerm modified mode [ 'test/testlist.txt', 438, 420 ]
+213 verbose read json C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package\package.json
+214 silly lockFile c7644943-pm-cache-msnodesql-0-2-1-package C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package
+215 silly lockFile c7644943-pm-cache-msnodesql-0-2-1-package C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package
+216 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+217 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+218 silly shasum updated bytes 65536
+219 silly shasum updated bytes 5947
+220 info shasum 3c72731040e650b44af24acb2c174863dc0e5817
+220 info shasum C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+221 verbose from cache C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package\package.json
+222 verbose chmod C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz 644
+223 silly chown skipping for windows C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+224 silly lockFile 02dc1593-rg-msnodesql-msnodesql-0-2-1-tgz https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz
+225 silly lockFile 02dc1593-rg-msnodesql-msnodesql-0-2-1-tgz https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz
+226 silly lockFile 4e0afecd-msnodesql-0-2-1 msnodesql@0.2.1
+227 silly lockFile 4e0afecd-msnodesql-0-2-1 msnodesql@0.2.1
+228 silly lockFile 0cd57691-msnodesql msnodesql@
+229 silly lockFile 0cd57691-msnodesql msnodesql@
+230 silly resolved [ { name: 'msnodesql',
+230 silly resolved     description: 'Microsoft Driver for Node.js for SQL Server',
+230 silly resolved     author: { name: 'Microsoft Corp.' },
+230 silly resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+230 silly resolved     version: '0.2.1',
+230 silly resolved     keywords:
+230 silly resolved      [ 'sql',
+230 silly resolved        'database',
+230 silly resolved        'mssql',
+230 silly resolved        'azure',
+230 silly resolved        'sqlserver',
+230 silly resolved        'tds',
+230 silly resolved        'microsoft',
+230 silly resolved        'msnodesql',
+230 silly resolved        'node-sqlserver' ],
+230 silly resolved     homepage: 'https://github.com/WindowsAzure/node-sqlserver',
+230 silly resolved     bugs: 'https://github.com/WindowsAzure/node-sqlserver/issues',
+230 silly resolved     licenses: [ [Object] ],
+230 silly resolved     main: './lib/sql.js',
+230 silly resolved     repository:
+230 silly resolved      { type: 'git',
+230 silly resolved        url: 'git://github.com/WindowsAzure/node-sqlserver.git' },
+230 silly resolved     engines: { node: '>=0.6' },
+230 silly resolved     devDependencies: { mocha: '0.14.x', async: '0.1.x' },
+230 silly resolved     os: [ 'win32' ],
+230 silly resolved     scripts: { install: 'node scripts/install.js' },
+230 silly resolved     readme: '# Microsoft Driver for Node.js for SQL Server\r\n\r\nThe Microsoft Driver for Node.js for SQL Server allows Node.js applications on\r\nMicrosoft Windows and Microsoft Windows Azure to access Microsoft SQL Server \r\nand Microsoft Windows Azure SQL Database.\r\n\r\nThis is an initial preview release, and is not production ready. We welcome any\r\nfeedback, fixes and contributions from the community at this very early stage.\r\n\r\n## Prerequisites\r\n\r\nThe following prerequisites are necessary prior to using the driver:\r\n\r\n* Node.js - use the latest version if possible, but it has been tested on node\r\n0.6.10 and later\r\n\r\n* node-gyp - latest version installed globally (npm install -g node-gyp)\r\n\r\n* python 2.7.x - for node-gyp (make sure it is in the path)\r\n\r\n* Visual C++ 2010 - the Express edition is freely available from \r\n[Microsoft][visualstudio]\r\n\r\n* SQL Server Native Client 11.0 - available as Microsoft SQL Server 2012 \r\nNative Client found in the [SQL Server 2012 Feature Pack][sqlncli]\r\n\r\n## Build\r\n\r\nTo build the driver, first node-gyp must configure the appropriate build files.\r\n\r\n    node-gyp configure\r\n\r\nUse node-gyp to build the driver:\r\n\r\n    node-gyp build\r\n\r\nOr to build the debug version:\r\n\r\n    node-gyp build --debug\r\n\r\nThen copy the sqlserver.node file from the build\\\\(Release|Debug) directory to\r\nthe lib directory.  If you would like to use Visual C++ to debug the driver,\r\nalso copy the sqlserver.pdb file from the same directory.\r\n\r\n## Test\r\n\r\nIncluded are a few unit tests.  They require mocha, async, and assert to be \r\ninstalled via npm.  Also, set the variables in test-config.js, then run the \r\ntests as follows:\r\n\r\n    cd test\r\n    node runtests.js\r\n\r\n## Known Issues\r\n\r\nWe are aware that many features are still not implemented, and are working to\r\nupdate these. Please visit the [project on Github][project] to view \r\noutstanding [issues][issues].\r\n\r\n## Usage\r\n\r\nFor now, please see the unit tests for usage examples.\r\n\r\n## Contribute Code\r\n\r\nIf you would like to become an active contributor to this project please follow the instructions provided in [the Contribution Guidelines][contribute].\r\n\r\n## License\r\n\r\nThe Microsoft Driver for Node.js for SQL Server is licensed under the Apache\r\n2.0 license.  See the LICENSE file for more details.\r\n\r\n[visualstudio]: http://www.microsoft.com/visualstudio/\r\n\r\n[sqlncli]: http://www.microsoft.com/en-us/download/details.aspx?id=29065\r\n\r\n[project]: https://github.com/windowsazure/node-sqlserver\r\n\r\n[issues]: https://github.com/windowsazure/node-sqlserver/issues\r\n\r\n[contribute]: https://github.com/WindowsAzure/node-sqlserver/blob/master/CONTRIBUTING.md\r\n\r\n\r\n\r\n',
+230 silly resolved     readmeFilename: 'README.md',
+230 silly resolved     _id: 'msnodesql@0.2.1',
+230 silly resolved     dist: { shasum: '3c72731040e650b44af24acb2c174863dc0e5817' },
+230 silly resolved     _from: 'msnodesql@',
+230 silly resolved     _resolved: 'https://registry.npmjs.org/msnodesql/-/msnodesql-0.2.1.tgz' } ]
+231 info install msnodesql@0.2.1 into C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger
+232 info installOne msnodesql@0.2.1
+233 verbose from cache C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package\package.json
+234 info C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql unbuild
+235 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql\package.json
+236 verbose tar unpack C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+237 silly lockFile b8559e61-Messenger-node-modules-msnodesql C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql
+238 verbose lock C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql C:\Users\Cury\AppData\Roaming\npm-cache\b8559e61-Messenger-node-modules-msnodesql.lock
+239 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+240 verbose lock C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz C:\Users\Cury\AppData\Roaming\npm-cache\d56e5ab5-ache-msnodesql-0-2-1-package-tgz.lock
+241 silly gunzTarPerm modes [ '755', '644' ]
+242 silly gunzTarPerm extractEntry package.json
+243 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+244 silly gunzTarPerm extractEntry .npmignore
+245 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+246 silly gunzTarPerm extractEntry README.md
+247 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+248 silly gunzTarPerm extractEntry LICENSE
+249 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+250 silly gunzTarPerm extractEntry key
+251 silly gunzTarPerm modified mode [ 'key', 438, 420 ]
+252 silly gunzTarPerm extractEntry lib/sql.js
+253 silly gunzTarPerm modified mode [ 'lib/sql.js', 438, 420 ]
+254 silly gunzTarPerm extractEntry lib/sqlserver.native.js
+255 silly gunzTarPerm modified mode [ 'lib/sqlserver.native.js', 438, 420 ]
+256 silly gunzTarPerm extractEntry binding.gyp
+257 silly gunzTarPerm modified mode [ 'binding.gyp', 438, 420 ]
+258 silly gunzTarPerm extractEntry CONTRIBUTORS
+259 silly gunzTarPerm modified mode [ 'CONTRIBUTORS', 438, 420 ]
+260 silly gunzTarPerm extractEntry CONTRIBUTING.md
+261 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 438, 420 ]
+262 silly gunzTarPerm extractEntry scripts/install.js
+263 silly gunzTarPerm modified mode [ 'scripts/install.js', 438, 420 ]
+264 silly gunzTarPerm extractEntry src/OdbcHandle.h
+265 silly gunzTarPerm modified mode [ 'src/OdbcHandle.h', 438, 420 ]
+266 silly gunzTarPerm extractEntry src/Column.cpp
+267 silly gunzTarPerm modified mode [ 'src/Column.cpp', 438, 420 ]
+268 silly gunzTarPerm extractEntry src/Connection.cpp
+269 silly gunzTarPerm modified mode [ 'src/Connection.cpp', 438, 420 ]
+270 silly gunzTarPerm extractEntry src/Connection.h
+271 silly gunzTarPerm modified mode [ 'src/Connection.h', 438, 420 ]
+272 silly gunzTarPerm extractEntry src/CriticalSection.h
+273 silly gunzTarPerm modified mode [ 'src/CriticalSection.h', 438, 420 ]
+274 silly gunzTarPerm extractEntry src/OdbcConnection.cpp
+275 silly gunzTarPerm modified mode [ 'src/OdbcConnection.cpp', 438, 420 ]
+276 silly gunzTarPerm extractEntry src/OdbcConnection.h
+277 silly gunzTarPerm modified mode [ 'src/OdbcConnection.h', 438, 420 ]
+278 silly gunzTarPerm extractEntry src/OdbcConnectionBridge.h
+279 silly gunzTarPerm modified mode [ 'src/OdbcConnectionBridge.h', 438, 420 ]
+280 silly gunzTarPerm extractEntry src/OdbcError.cpp
+281 silly gunzTarPerm modified mode [ 'src/OdbcError.cpp', 438, 420 ]
+282 silly gunzTarPerm extractEntry src/OdbcError.h
+283 silly gunzTarPerm modified mode [ 'src/OdbcError.h', 438, 420 ]
+284 silly gunzTarPerm extractEntry src/Column.h
+285 silly gunzTarPerm modified mode [ 'src/Column.h', 438, 420 ]
+286 silly gunzTarPerm extractEntry src/OdbcOperation.cpp
+287 silly gunzTarPerm modified mode [ 'src/OdbcOperation.cpp', 438, 420 ]
+288 silly gunzTarPerm extractEntry src/OdbcOperation.h
+289 silly gunzTarPerm modified mode [ 'src/OdbcOperation.h', 438, 420 ]
+290 silly gunzTarPerm extractEntry src/Operation.h
+291 silly gunzTarPerm modified mode [ 'src/Operation.h', 438, 420 ]
+292 silly gunzTarPerm extractEntry src/ResultSet.cpp
+293 silly gunzTarPerm modified mode [ 'src/ResultSet.cpp', 438, 420 ]
+294 silly gunzTarPerm extractEntry src/ResultSet.h
+295 silly gunzTarPerm modified mode [ 'src/ResultSet.h', 438, 420 ]
+296 silly gunzTarPerm extractEntry src/sqlncli.h
+297 silly gunzTarPerm modified mode [ 'src/sqlncli.h', 438, 420 ]
+298 silly gunzTarPerm extractEntry src/stdafx.cpp
+299 silly gunzTarPerm modified mode [ 'src/stdafx.cpp', 438, 420 ]
+300 silly gunzTarPerm extractEntry src/stdafx.h
+301 silly gunzTarPerm modified mode [ 'src/stdafx.h', 438, 420 ]
+302 silly gunzTarPerm extractEntry src/Utility.cpp
+303 silly gunzTarPerm modified mode [ 'src/Utility.cpp', 438, 420 ]
+304 silly gunzTarPerm extractEntry src/Utility.h
+305 silly gunzTarPerm modified mode [ 'src/Utility.h', 438, 420 ]
+306 silly gunzTarPerm extractEntry test/CommonTestFunctions.js
+307 silly gunzTarPerm modified mode [ 'test/CommonTestFunctions.js', 438, 420 ]
+308 silly gunzTarPerm extractEntry test/connect.js
+309 silly gunzTarPerm modified mode [ 'test/connect.js', 438, 420 ]
+310 silly gunzTarPerm extractEntry test/datatypes.js
+311 silly gunzTarPerm modified mode [ 'test/datatypes.js', 438, 420 ]
+312 silly gunzTarPerm extractEntry test/dates.js
+313 silly gunzTarPerm modified mode [ 'test/dates.js', 438, 420 ]
+314 silly gunzTarPerm extractEntry test/compoundqueries.js
+315 silly gunzTarPerm modified mode [ 'test/compoundqueries.js', 438, 420 ]
+316 silly gunzTarPerm extractEntry test/query.js
+317 silly gunzTarPerm modified mode [ 'test/query.js', 438, 420 ]
+318 silly gunzTarPerm extractEntry test/runtests.js
+319 silly gunzTarPerm modified mode [ 'test/runtests.js', 438, 420 ]
+320 silly gunzTarPerm extractEntry test/test-config.js
+321 silly gunzTarPerm modified mode [ 'test/test-config.js', 438, 420 ]
+322 silly gunzTarPerm extractEntry test/txn.js
+323 silly gunzTarPerm modified mode [ 'test/txn.js', 438, 420 ]
+324 silly gunzTarPerm extractEntry test/params.js
+325 silly gunzTarPerm modified mode [ 'test/params.js', 438, 420 ]
+326 silly gunzTarPerm extractEntry test/testlist.txt
+327 silly gunzTarPerm modified mode [ 'test/testlist.txt', 438, 420 ]
+328 verbose read json C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql\package.json
+329 silly lockFile b8559e61-Messenger-node-modules-msnodesql C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql
+330 silly lockFile b8559e61-Messenger-node-modules-msnodesql C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql
+331 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+332 silly lockFile d56e5ab5-ache-msnodesql-0-2-1-package-tgz C:\Users\Cury\AppData\Roaming\npm-cache\msnodesql\0.2.1\package.tgz
+333 info preinstall msnodesql@0.2.1
+334 verbose from cache C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql\package.json
+335 verbose readDependencies using package.json deps
+336 verbose from cache C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql\package.json
+337 verbose readDependencies using package.json deps
+338 silly resolved []
+339 verbose about to build C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql
+340 info build C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql
+341 verbose from cache C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql\package.json
+342 verbose linkStuff [ false,
+342 verbose linkStuff   false,
+342 verbose linkStuff   false,
+342 verbose linkStuff   'C:\\Users\\Cury\\SkyDrive\\Common\\Work\\Projetos\\NodeMessenger\\node_modules' ]
+343 info linkStuff msnodesql@0.2.1
+344 verbose linkBins msnodesql@0.2.1
+345 verbose linkMans msnodesql@0.2.1
+346 verbose rebuildBundles msnodesql@0.2.1
+347 info install msnodesql@0.2.1
+348 verbose unsafe-perm in lifecycle true
+349 silly exec cmd "/c" "node scripts/install.js"
+350 silly cmd,/c,node scripts/install.js,C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql spawning
+351 info msnodesql@0.2.1 Failed to exec install script
+352 info C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql unbuild
+353 verbose from cache C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules\msnodesql\package.json
+354 info preuninstall msnodesql@0.2.1
+355 info uninstall msnodesql@0.2.1
+356 verbose true,C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules,C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger\node_modules unbuild msnodesql@0.2.1
+357 info postuninstall msnodesql@0.2.1
+358 error msnodesql@0.2.1 install: `node scripts/install.js`
+358 error `cmd "/c" "node scripts/install.js"` failed with 1
+359 error Failed at the msnodesql@0.2.1 install script.
+359 error This is most likely a problem with the msnodesql package,
+359 error not with npm itself.
+359 error Tell the author that this fails on your system:
+359 error     node scripts/install.js
+359 error You can get their info via:
+359 error     npm owner ls msnodesql
+359 error There is likely additional logging output above.
+360 error System Windows_NT 6.2.9200
+361 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "msnodesql"
+362 error cwd C:\Users\Cury\SkyDrive\Common\Work\Projetos\NodeMessenger
+363 error node -v v0.10.4
+364 error npm -v 1.2.18
+365 error code ELIFECYCLE
+366 verbose exit [ 1, true ]
