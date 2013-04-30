@@ -220,3 +220,28 @@ dictSmile.push({
   text: ":shifty:",
   image: "<img src='/images/emoticons/shifty.gif'>"
 });
+
+dictSmile.push({
+  text: "flowers",
+  image: "<img src='/images/emoticons/0032.gif'>"
+});
+
+dictSmile.push({
+  text: "suadoo",
+  image: "<img src='/images/emoticons/0067.gif'>"
+});
+
+dictSmile.push({
+  text: "026",
+  image: "<img src='/images/emoticons/026.gif'>"
+});
+
+dictSmile.push({
+  text: "wub",
+  image: "<img src='/images/emoticons/0098.gif'>"
+});
+
+dictSmile.push({
+  text: "hug",
+  image: "<img src='/images/emoticons/0035.gif'>"
+});
