@@ -16,3 +16,16 @@ textarea{
   width: 370px;
   height: 120px;
 }
+
+table{
+
+}
+
+table tbody tr{
+  height: 30px;  
+}
+
+table tbody tr td{
+  width: 50px;  
+  text-align: center;
+}
