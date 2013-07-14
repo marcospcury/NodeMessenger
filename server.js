@@ -1,3 +1,2 @@
-var coffee = require('coffee-script');
-var app = require('./app/app');
+var app = require('./dist/app');
 app.start();

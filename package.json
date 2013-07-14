@@ -12,6 +12,14 @@
     "coffee-script": "*",
     "validator": "*",
     "azure": "*",
+    "mongoose": "*",
     "redis": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-express-server": "~0.4.1"
   }
 }
