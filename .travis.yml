@@ -3,5 +3,5 @@ language: node_js
 node_js:
 - '0.10'
 after_success:
-- git remote add azure https://$nodemessenger:ELYvGoYmoZbbn2m2Kct3Yj5aXHqzhhkAHB9E1eEqD40h44TczkwffXz1edFl@nodemessenger.scm.azurewebsites.net/deploy
+- git remote add azure https://marcospcury:marcos214196@nodemessenger.scm.azurewebsites.net/nodemessenger.git
 - yes | git push azure master
