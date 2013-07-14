@@ -3,11 +3,5 @@ language: node_js
 node_js:
 - '0.10'
 after_success:
-- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-- git remote add heroku git@heroku.com:nodemessenger.git
-- echo "Host heroku.com" >> ~/.ssh/config
-- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-- echo "   CheckHostIP no" >> ~/.ssh/config
-- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-- yes | heroku keys:add
-- yes | git push heroku master
+- git remote add azure https://$nodemessenger:ELYvGoYmoZbbn2m2Kct3Yj5aXHqzhhkAHB9E1eEqD40h44TczkwffXz1edFl@nodemessenger.scm.azurewebsites.net/deploy
+- yes | git push azure master
