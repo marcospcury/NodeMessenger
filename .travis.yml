@@ -3,5 +3,6 @@ language: node_js
 node_js:
 - '0.10'
 after_success:
-- git remote add azure https://marcospcury:marcos214196@nodemessenger.scm.azurewebsites.net/nodemessenger.git
-- yes | git push azure master
+	deploy:
+		provider: heroku
+		api_key: "6073caa7-51c6-4e65-8356-5235d96a8e2e"
