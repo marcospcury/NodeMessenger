@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  span Apelido:
+    input(type="text", id="autor")
+    select(id="cor-texto")
+      option Blue
+      option Red
+  #dialog-emoticon(title="Emoticons")
+    #emoticons-container
+  #dialog-conversa(title="Conversa")
+    #dialog-historico
+    textarea(id='msg')
+    button(id="botao-enviar") Enviar
+    button(id="botao-emoticon") Emoticons
