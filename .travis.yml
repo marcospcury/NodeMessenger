@@ -3,6 +3,18 @@ language: node_js
 node_js:
 - '0.10'
 after_success:
-  deploy:
-    provider: heroku
-    api_key: "6073caa7-51c6-4e65-8356-5235d96a8e2e"
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- git remote add heroku git@heroku.com:nodemessenger.git
+- echo "Host heroku.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- yes | heroku keys:add
+- yes | git push heroku master
+
+env:
+  global:
+    secure: |-
+      bhE+wT5DpsQ6q0t8RNJZuxXuFFd9TyHJyStbjUHXLTRC5qHDh/2hRg/TjC9T
+      nKUVT8s3H8cEORkoDu3VA5EZNy1+Hi7UDjELaW/AZ/BnEqPyw4Q5m9HtRdJg
+      03FghIbVpa/rlfYxUjjNK1VLnaC8WC5igQb70MyEJbW8mspMCMY=
