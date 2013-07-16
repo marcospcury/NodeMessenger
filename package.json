@@ -3,7 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "grunt travis"
+    "start": "node server.js",
+    "test" : "grunt test",
+    "blanket": {
+      "pattern": [
+        "public",
+        "dist"
+      ]
+    }
   },
   "dependencies": {
     "express": "3.2.0",
@@ -17,9 +24,12 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
+    "phantomjs": "*",
+    "mochacov": "*",
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-coffeelint": "0.0.7",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-express-server": "~0.4.1"
+    "grunt-express-server": "~0.4.1",
+    "grunt-contrib-qunit": "~0.2.2"
   }
 }

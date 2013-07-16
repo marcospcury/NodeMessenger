@@ -1,11 +1,12 @@
 exports.start = function(cb) {
-  var app, express, http, path, polling, router, server;
+  var app, express, http, mongoose, path, polling, router, server;
 
   express = require("express");
   router = require("./routes/router");
   http = require("http");
   path = require("path");
   polling = require("./polling");
+  mongoose = require("mongoose");
   app = express();
   app.configure(function() {
     app.set("port", process.env.PORT || 3000);
@@ -25,7 +26,8 @@ exports.start = function(cb) {
   });
   router.route(app);
   server = http.createServer(app).listen(app.get("port"), function() {
-    return console.log("listening on port " + (app.get('port')));
+    console.log("listening on port " + (app.get('port')));
+    return console.log(app.get("env"));
   });
   return polling.start(server);
 };

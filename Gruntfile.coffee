@@ -29,7 +29,14 @@ module.exports = (grunt) ->
           script: 'server.coffee'
           node_env: 'development'
 
+    qunit:
+      all: ["dist/test/unit.html"]
+
+
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-express-server'
+  grunt.loadNpmTasks 'grunt-contrib-qunit'
+
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
+  grunt.registerTask 'test', ['coffee', 'copy', 'qunit']
