@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "postinstall": "node_modules/grunt-cli/bin/grunt install",
     "test" : "grunt test",
     "blanket": {
       "pattern": [
