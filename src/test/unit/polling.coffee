@@ -1,2 +1,2 @@
 test "first assert", ->
-	ok("1" != "1", "Passed!")
+	ok("1" == "1", "Passed!")
