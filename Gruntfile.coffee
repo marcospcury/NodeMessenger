@@ -5,9 +5,17 @@ module.exports = (grunt) ->
     coffee:
       app:
         expand:true
-        cwd: 'src'
+        cwd: 'app'
         src: ['**/*.coffee']
         dest: 'dist'
+        ext: '.js'
+        options:
+          bare:true
+      public:
+        expand:true
+        cwd: 'public'
+        src: ['**/*.coffee', '!javascripts/lib/**/*']
+        dest: 'public'
         ext: '.js'
         options:
           bare:true
@@ -16,7 +24,7 @@ module.exports = (grunt) ->
       main :
         files: [{
           expand: true
-          cwd: 'src/'
+          cwd: 'app/'
           src: ['**/*.!(coffee)']
           dest: 'dist/'
           }]

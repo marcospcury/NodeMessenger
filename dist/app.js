@@ -1,6 +1,5 @@
 exports.start = function(cb) {
   var app, express, http, mongoose, path, polling, router, server;
-
   express = require("express");
   router = require("./routes/router");
   http = require("http");
@@ -19,7 +18,7 @@ exports.start = function(cb) {
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    return app.use(express["static"](path.join(__dirname, "public")));
+    return app.use(express["static"](path.join(__dirname, '..', "public")));
   });
   app.configure("development", function() {
     return app.use(express.errorHandler());

@@ -1,2 +1,2 @@
-app = require('./src/app')
+app = require('./app/app')
 app.start()

@@ -1,6 +1,5 @@
 exports.start = function(server) {
   var io, socketio;
-
   socketio = require("socket.io");
   io = socketio.listen(server);
   io.configure(function() {
