@@ -1,4 +1,5 @@
 node_modules
+dist
 azure_error
 *.js
 public/**/lib
