@@ -23,7 +23,8 @@
     "azure": "*",
     "mongoose": "*",
     "redis": "*",
-    "bower": "~1.0.0"
+    "bower": "~1.0.0",
+    "grunt-bower-task": "~0.2.x",
   },
   "devDependencies": {
     "grunt": "~0.4.1",

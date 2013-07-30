@@ -40,11 +40,18 @@ module.exports = (grunt) ->
     qunit:
       all: ["dist/test/unit.html"]
 
+    bower:
+      install:
+        options:
+          target: 'public/javascripts/lib'
+          copy: false
+
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-express-server'
+  grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-qunit'
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
-  grunt.registerTask 'test', ['coffee', 'copy', 'qunit']
+  grunt.registerTask 'test', ['coffee', 'bower', 'copy', 'qunit']
