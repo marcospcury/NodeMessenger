@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node server.js",
+    "start": "node_modules/grunt-cli/bin/grunt production",
+    "postinstall": "node_modules/grunt-cli/bin/grunt install",
     "test": "grunt test",
     "blanket": {
       "pattern": [

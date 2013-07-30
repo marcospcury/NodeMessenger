@@ -36,6 +36,11 @@ module.exports = (grunt) ->
         options:
           script: 'server.coffee'
           node_env: 'development'
+      prod:
+        options:
+          script: 'server.js'
+          node_env: 'production'
+          background: false
 
     qunit:
       all: ["dist/test/unit.html"]
@@ -46,7 +51,6 @@ module.exports = (grunt) ->
           target: 'public/javascripts/lib'
           copy: false
 
-
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-express-server'
@@ -55,3 +59,5 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
   grunt.registerTask 'test', ['coffee', 'bower', 'copy', 'qunit']
+  grunt.registerTask 'install', ['coffee', 'bower', 'copy']
+  grunt.registerTask 'production', ['express:prod']
