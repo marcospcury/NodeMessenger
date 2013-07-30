@@ -6,6 +6,5 @@ public/**/lib
 compiledPublic
 *.map
 *.password
-*.css
 .elasticbeanstalk/
 seed/*
