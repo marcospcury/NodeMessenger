@@ -50,14 +50,25 @@ module.exports = (grunt) ->
         options:
           target: 'public/javascripts/lib'
           copy: false
+    clean:
+      js:
+        dirs: ['dist/models/', 'dist/routes/', 'dist/test/unit', 'dist/test/', 'dist/views/', 'dist/']
+
+    'clean-pattern':
+      scripts:
+        path: 'public/javascripts/'
+        pattern: '[a-z].js'
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-express-server'
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-contrib-qunit'
+  grunt.loadNpmTasks 'grunt-cleanx'
+  grunt.loadNpmTasks 'clean-pattern'
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
   grunt.registerTask 'test', ['coffee', 'bower', 'copy', 'qunit']
   grunt.registerTask 'install', ['coffee', 'bower', 'copy']
+  grunt.registerTask 'cleanBuild', ['clean', 'clean-pattern']
   grunt.registerTask 'production', ['express:prod']
