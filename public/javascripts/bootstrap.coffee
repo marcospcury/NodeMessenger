@@ -7,6 +7,9 @@ requirejs.config
 		text: 'lib/requirejs-text/text'
 		jqueryui: '//code.jquery.com/ui/1.10.3/jquery-ui'
 		socketio: '../../socket.io/socket.io'
+		jqueryAlert: '//raw.github.com/marcospcury/JSLib/master/jquery.titlealert.min'
 	shim:
 		'jqueryui':
+			deps: ['jquery']
+		'jqueryAlert':
 			deps: ['jquery']

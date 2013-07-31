@@ -1,4 +1,4 @@
-require ['jquery', 'socketio', 'jqueryui'], ($, io) ->
+require ['jquery', 'socketio', 'jqueryui', 'jqueryAlert'], ($, io) ->
    $ -> 
     socket = io.connect()
     socket.on 'news', (data) -> show(data)
