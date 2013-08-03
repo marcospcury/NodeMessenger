@@ -7,7 +7,7 @@ a {
   color: #00B7FF;
 }
 
-#dialog-historico{
+#conversation-history{
   height: 300px;
   overflow: scroll;
 }

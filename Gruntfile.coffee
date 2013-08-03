@@ -58,6 +58,15 @@ module.exports = (grunt) ->
       scripts:
         path: 'public/javascripts/'
         pattern: '[a-z].js'
+      scriptsModels:
+        path: 'public/javascripts/models'
+        pattern: '[a-z].js'
+      scriptsViews:
+        path: 'public/javascripts/views'
+        pattern: '[a-z].js'
+      scriptsSupport:
+        path: 'public/javascripts/support'
+        pattern: '[a-z].js'
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-copy'

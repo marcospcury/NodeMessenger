@@ -13,3 +13,8 @@ requirejs.config
 			deps: ['jquery']
 		'jqueryAlert':
 			deps: ['jquery']
+		'underscore':
+			exports: '_'
+		'backbone':
+			deps: ['jquery', 'underscore']
+			exports: 'Backbone'
