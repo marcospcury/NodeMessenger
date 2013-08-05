@@ -12,7 +12,8 @@ define [
     ], 
     ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, MessageCollection, WebSocket) ->
         class ConversationView extends Backbone.View
-            el: "#dialog-conversation"
+
+            template: _.template "<div id='conversation-history'></div><textarea id='message-area'></textarea><button id='send-button'>Enviar</button><button id='emoticon-button'>Emoticons</button>"
 
             initialize: ->
                 @messages = new MessageCollection()
@@ -24,7 +25,7 @@ define [
             events: ->
                 "click #send-button" : "sendMessage"
                 "keypress #message-area" : "handleEnterKey"
-                "click #emoticon-button" : "showEmoticons"
+                "click #emoticon-button" : "showEmoticonsAvailable"
 
             mapExternalEvents: ->
                 @emoticonsDialog.on "emoticonSelected", @addEmoticonToMessage
@@ -33,11 +34,12 @@ define [
                     self.messages.add message
 
             render: ->
+                @$el.append @template
+                @messageHistory.setElement @$("#conversation-history")
+                @messageHistory.render()
                 @emoticonsDialog.render()
-                @$el.attr "title", "Conversa"
-                @$el.dialog
-                    width: 400
-                    resizable: yes
+                @renderDialog()
+                @renderButtons()
 
             sendMessage: ->
                 @websocket.sendMessage author: "Marcos", recipient: "Daniela", body: $("#message-area").val()
@@ -48,10 +50,27 @@ define [
                     @sendMessage()
                     e.preventDefault()
 
-            showEmoticons: ->
+            showEmoticonsAvailable: ->
                 @emoticonsDialog.show()
 
             addEmoticonToMessage: (emoticon) ->
                 $("#message-area").val $("#message-area").val() + emoticon
+
+            renderButtons: ->
+                $('#send-button').button icons: primary: "ui-icon-mail-closed"
+                $("#emoticon-button").button icons: primary: "ui-icon-person"
+
+            renderDialog: ->
+                self = @
+                @$el.dialog
+                    width: 400
+                    resizable: yes
+                    close: (event, ui) -> self.closeConversation self
+
+            closeConversation: (self) ->
+                self.undelegateEvents()
+                self.$el.dialog( "destroy" )
+                self.websocket.disconnect()
+                self.$el.remove()
 
         ConversationView

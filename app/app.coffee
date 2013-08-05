@@ -3,13 +3,10 @@ exports.start = (cb) ->
 	router 		= require "./routes/router"
 	http 		= require "http"
 	path 		= require "path"
-	polling 	= require "./polling"
+	SocketServer 	= require "./socketServer"
 	mongoose 	= require "mongoose"
 
 	app = express()
-
-	#mongoose.connect "mongodb://localhost/nodemessenger"
-	#mongoose.connect "mongodb://nodemessenger:214196@ds027758.mongolab.com:27758/nodemessenger"
 
 	app.configure ->
 		app.set "port", process.env.PORT || 3000
@@ -31,4 +28,5 @@ exports.start = (cb) ->
 		console.log "listening on port #{app.get('port')}"
 		console.log app.get("env")
 
-	polling.start server
+	socketServer = new SocketServer()
+	socketServer.startPooling server

@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  button(id="botao-novo") Nova Conversa
   span Apelido:
     input(type="text", id="autor")
     select(id="cor-texto")
@@ -8,8 +9,3 @@ block content
       option Red
   #dialog-emoticon(title="Emoticons")
     #emoticons-container
-  #dialog-conversation
-    #conversation-history
-    textarea(id='message-area')
-    button(id="send-button") Enviar
-    button(id="emoticon-button") Emoticons

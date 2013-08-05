@@ -6,13 +6,10 @@ define [
         'models/messageCollection'
     ], ($, _, Backbone, MessageCollection) ->
         class MessageHistoryView extends Backbone.View
-            el: "#conversation-history"
-
             initialize: (data) ->
                 _.bindAll @, "addMessage", "render"
                 @messageCollection = data
                 @messageCollection.bind "add", @addMessage
-                @render()
 
             template: _.template "<%=author%>: <br />&nbsp;&nbsp;&nbsp;<%=body%> <br />"
 
