@@ -78,6 +78,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
   grunt.registerTask 'test', ['coffee', 'bower', 'copy', 'qunit']
+  grunt.registerTask 'test:dev', ['coffee', 'copy', 'qunit']
   grunt.registerTask 'install', ['coffee', 'bower', 'copy']
   grunt.registerTask 'cleanBuild', ['clean', 'clean-pattern']
   grunt.registerTask 'production', ['express:prod']
