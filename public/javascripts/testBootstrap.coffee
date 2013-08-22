@@ -9,7 +9,10 @@ requirejs.config
     sinon: 'lib/sinon/lib/sinon'
     socketio: '../../socket.io/socket.io'
     jqueryAlert: '//raw.github.com/marcospcury/JSLib/master/jquery.titlealert.min'
+    Qunit: 'lib/qunit/qunit/qunit.js'
   shim:
+    'jquery':
+      exports: '$'
     'jqueryui':
       deps: ['jquery']
     'jqueryAlert':
@@ -19,3 +22,8 @@ requirejs.config
     'backbone':
       deps: ['jquery', 'underscore']
       exports: 'Backbone'
+    'Qunit':
+      exports: 'Qunit'
+      init: ->
+        Qunit.config.autoload = false
+        Qunit.config.autostart = false

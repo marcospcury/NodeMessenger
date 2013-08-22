@@ -42,8 +42,10 @@ module.exports = (grunt) ->
           node_env: 'production'
           background: false
 
-    qunit:
-      all: ["dist/test/unit.html"]
+    mochacli:
+      options:
+        require: ['public/javascripts/test/support/runnerSetup.js']
+      client: ['public/javascripts/test/*.js']
 
     bower:
       install:
@@ -75,10 +77,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-qunit'
   grunt.loadNpmTasks 'grunt-cleanx'
   grunt.loadNpmTasks 'clean-pattern'
+  grunt.loadNpmTasks 'grunt-mocha-cli'
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
-  grunt.registerTask 'test', ['coffee', 'bower', 'copy', 'qunit']
-  grunt.registerTask 'test:dev', ['coffee', 'copy', 'qunit']
+  grunt.registerTask 'test', ['coffee:public', 'mochacli:client']
   grunt.registerTask 'install', ['coffee', 'bower', 'copy']
   grunt.registerTask 'cleanBuild', ['clean', 'clean-pattern']
   grunt.registerTask 'production', ['express:prod']

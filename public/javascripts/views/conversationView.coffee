@@ -6,14 +6,15 @@ define [
         'views/emoticonsDialogView', 
         'models/messageModel',
         'models/messageCollection',
-        'support/webSocket'
+        'support/webSocket',
+        'text!./templates/conversationDialogTemplate.html',
         'jqueryui',
         'jqueryAlert'
     ], 
-    ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, MessageCollection, WebSocket) ->
+    ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, MessageCollection, WebSocket, templateHtml) ->
         class ConversationView extends Backbone.View
 
-            template: _.template "<div id='conversation-history'></div><textarea id='message-area'></textarea><button id='send-button'>Enviar</button><button id='emoticon-button'>Emoticons</button>"
+            template: _.template templateHtml
 
             initialize: ->
                 @messages = new MessageCollection()

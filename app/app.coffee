@@ -18,9 +18,6 @@ exports.start = (cb) ->
     app.use express.methodOverride()
     app.use app.router
     app.use express.static(path.join(__dirname, '..', "public"))
-    app.use('public/javascripts', express.static(path.join(__dirname, '..', 'public/javascripts')))
-    app.use('public/javascripts/views', express.static(path.join(__dirname, '..', 'public/javascripts/views')))
-    app.use('public/stylesheets', express.static(path.join(__dirname, '..', 'public/stylesheets')))
 
   app.configure "development", ->
     app.use express.errorHandler()
