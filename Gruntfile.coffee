@@ -45,7 +45,7 @@ module.exports = (grunt) ->
     mochacli:
       options:
         require: ['public/javascripts/test/support/runnerSetup.js']
-      client: ['public/javascripts/test/*.js']
+      client: ['public/javascripts/test/unit/**/*.js']
 
     bower:
       install:

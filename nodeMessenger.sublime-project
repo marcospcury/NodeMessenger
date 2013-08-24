@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/marcos/Projetos/NodeMessenger",
+      "folder_exclude_patterns": ["node_modules", "lib"],
+      "file_exclude_patterns": ["*.js"]
+		}
+	]
+}

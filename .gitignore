@@ -7,4 +7,5 @@ compiledPublic
 *.map
 *.password
 .elasticbeanstalk/
+*.sublime-workspace
 seed/*
