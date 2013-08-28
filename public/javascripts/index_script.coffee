@@ -1,6 +1,7 @@
 require ['bootstrap'], ->
-    require ['jquery', 'underscore', 'backbone', 'views/conversationView'], ($, _, Backbone, ConversationView) ->
+    require ['jquery', 'underscore', 'backbone', 'support/webSocket', 'views/conversationView'], ($, _, Backbone, WebSocket, ConversationView) ->
         $ ->
             $("#botao-novo").click ->
-              conversationView = new ConversationView()
+              websocket = new WebSocket()
+              conversationView = new ConversationView websocket: websocket
               conversationView.render()

@@ -21,14 +21,14 @@ module.exports = (grunt) ->
           bare:true
  
     copy:
-      main :
+      main:
         files: [{
           expand: true
           cwd: 'app/'
           src: ['**/*.!(coffee)']
           dest: 'dist/'
           }]
- 
+
     express:
       options:
         background: false
@@ -46,6 +46,14 @@ module.exports = (grunt) ->
       options:
         require: ['public/javascripts/test/support/runnerSetup.js']
       client: ['public/javascripts/test/unit/**/*.js']
+
+    'curl-dir':
+      long:
+        src: [
+              'http://raw.github.com/marcospcury/JSLib/master/jquery.titlealert.min.js', 
+              'http://code.jquery.com/ui/1.10.3/jquery-ui.js'
+            ]
+        dest: 'public/javascripts/lib'
 
     bower:
       install:
@@ -78,9 +86,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-cleanx'
   grunt.loadNpmTasks 'clean-pattern'
   grunt.loadNpmTasks 'grunt-mocha-cli'
+  grunt.loadNpmTasks 'grunt-curl'
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
   grunt.registerTask 'test', ['coffee:public', 'mochacli:client']
+  grunt.registerTask 'test:travis', ['coffee:public', 'curl-dir', 'mochacli:client']
   grunt.registerTask 'install', ['coffee', 'bower', 'copy']
   grunt.registerTask 'cleanBuild', ['clean', 'clean-pattern']
   grunt.registerTask 'production', ['express:prod']

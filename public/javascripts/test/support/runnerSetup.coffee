@@ -31,7 +31,7 @@ initDOM = ->
     global.localStorage = window.localStorage
 
 configureRequireJS = ->
-  require '../../bootstrap'
+  require '../../testBootstrap'
   requirejs.config
     baseUrl: path.join __dirname, '..', ".."
     nodeRequire: require

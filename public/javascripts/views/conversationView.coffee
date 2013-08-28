@@ -6,21 +6,19 @@ define [
     'views/emoticonsDialogView', 
     'models/messageModel',
     'models/messageCollection',
-    'support/webSocket',
     'text!./templates/conversationDialogTemplate.html',
     'jqueryui',
     'jqueryAlert'
   ], 
-  ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, MessageCollection, WebSocket, templateHtml) ->
+  ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, MessageCollection, templateHtml) ->
     class ConversationView extends Backbone.View
 
       template: _.template templateHtml
 
-      initialize: ->
-        @messages = new MessageCollection()
-        @messageHistory = new MessageHistoryView @messages
+      initialize: (opt) ->
+        @messageHistory = new MessageHistoryView()
         @emoticonsDialog = new EmoticonsDialogView()
-        @websocket = new WebSocket()
+        @websocket = opt.websocket
         @mapExternalEvents()
 
       events: ->
@@ -32,7 +30,7 @@ define [
         @emoticonsDialog.on "emoticonSelected", @addEmoticonToMessage
         self = @
         @websocket.on "messageReceived", (message) ->
-          self.messages.add message
+          self.messageHistory.appendMessage new MessageModel(message)
 
       render: ->
         @$el.append @template
