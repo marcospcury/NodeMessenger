@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node_modules/grunt-cli/bin/grunt production",
     "postinstall": "node_modules/grunt-cli/bin/grunt install",
-    "test": "grunt test",
+    "test": "grunt test:travis",
     "blanket": {
       "pattern": [
         "public",
