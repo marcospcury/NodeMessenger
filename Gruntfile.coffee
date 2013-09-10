@@ -42,9 +42,10 @@ module.exports = (grunt) ->
           node_env: 'production'
           background: false
 
-    mochacli:
+    mochacov:
       options:
         require: ['public/javascripts/test/support/runnerSetup.js']
+        reporter: 'spec'
       client: ['public/javascripts/test/unit/**/*.js']
 
     'curl-dir':
@@ -85,12 +86,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-qunit'
   grunt.loadNpmTasks 'grunt-cleanx'
   grunt.loadNpmTasks 'clean-pattern'
-  grunt.loadNpmTasks 'grunt-mocha-cli'
+  grunt.loadNpmTasks 'grunt-mocha-cov'
   grunt.loadNpmTasks 'grunt-curl'
 
   grunt.registerTask 'default', ['coffee', 'copy', 'express']
-  grunt.registerTask 'test', ['coffee:public', 'mochacli:client']
-  grunt.registerTask 'test:travis', ['coffee:public', 'curl-dir', 'mochacli:client']
+  grunt.registerTask 'test', ['coffee:public', 'mochacov:client']
+  grunt.registerTask 'test:travis', ['coffee:public', 'curl-dir', 'mochacov:client']
   grunt.registerTask 'install', ['coffee', 'bower', 'copy']
   grunt.registerTask 'cleanBuild', ['clean', 'clean-pattern']
   grunt.registerTask 'production', ['express:prod']

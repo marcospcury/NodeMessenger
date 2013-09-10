@@ -5,9 +5,8 @@ define [
         'socketio'
     ], ($, _, Backbone, io) ->
       class WebSocket extends Backbone.Model
-        initialize: ->
+        connect: (status) ->
           @websocket = io.connect()
-          console.log @websocket
           self = @
           @websocket.on "news", (data) ->
             self.trigger "messageReceived", data

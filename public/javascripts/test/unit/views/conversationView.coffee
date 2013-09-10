@@ -2,26 +2,59 @@ define = require('amdefine')(module, requirejs) if (typeof define isnt 'function
 define [
   'jquery',
   'views/conversationView',
+  'models/contact',
+  'models/contacts',
   'models/messageModel',
   'test/support/mockWebsocket'
-], ($, ConversationView, MessageModel, Websocket) ->
+], ($, ConversationView, Contact, Contacts,  MessageModel, Websocket) ->
 
   el = $('<div></div>')
-  websocket = new Websocket()
-  sinon.stub websocket, "on"
-  conversationView = new ConversationView el: el, websocket: websocket
+  
+  contact = new Contact id:1, name: "Contact 1", status: "status-online"
+  currentUser = new Contact id:2, name: "Current User", status: "status-online"
+  conversationView = null
+  websocket = null
 
   describe 'ConversationView', ->
-    it 'maps websocket events', ->
-      expect(websocket.on.calledWithMatch("messageReceived", sinon.match.func)).to.be.true
-
-    it 'creates message history', ->
+    before ->
+      websocket = new Websocket()
+      sinon.stub websocket, "sendMessage"
+      conversationView = new ConversationView el: el, currentUser: currentUser, contact: contact, websocket: websocket
       conversationView.render()
-      expect($("#conversation-history", el).html()).to.not.equal undefined
+      $('#send-button_1', el).click()
 
-    it 'appends message to history view', ->
-      websocket.on.restore()
-      conversationView = new ConversationView el: el, websocket: websocket
-      conversationView.render()
-      websocket.trigger "messageReceived", {author: "autor", body: "messageEvent"}
-      expect($(".body", conversationView.messageHistory.el).text()).to.equal "messageEvent"
+    describe 'When conversation is initialized', ->
+      it 'renders dialog with unique inner objects', ->
+        expect($('#master-div_1', el).html()).to.not.equal undefined
+        expect($('#conversation-history_1', el).html()).to.not.equal undefined
+        expect($('#message-area_1', el).html()).to.not.equal undefined
+        expect($('#send-button_1', el).html()).to.not.equal undefined
+        expect($('#emoticon-button_1', el).html()).to.not.equal undefined
+
+      it 'initializes blank conversation-history', ->
+        expect($('#conversation-history_1', el).html()).to.equal ''
+
+      it 'renders conversation title', ->
+        expect(el.attr 'title').to.equal 'Contact 1 - Conversa'
+
+    describe 'When user sends a message', ->
+      before ->
+        $('#message-area_1', el).val 'mensagem escrita'
+        $('#send-button_1', el).click()
+
+      after ->
+        $('#conversation-history_1', el).empty()
+
+      it 'sends the message on websocket', ->
+        expect(websocket.sendMessage.calledWithMatch(author: 'Current User', recipient: 'Contact 1', body: 'mensagem escrita')).to.be.true
+
+      it 'cleans the message area', ->
+        expect($('#message-area_1', el).val()).to.equal ''
+
+    describe 'When a message is received', ->
+      it 'renders the message on the conversation-history', ->
+        websocket.trigger 'messageReceived', {author: 'Contact 1', recipient: 'Current User', body: 'mensagem teste'}
+        expect($('#conversation-history_1 > .message > .body', el).html()).to.equal 'mensagem teste'
+        
+
+

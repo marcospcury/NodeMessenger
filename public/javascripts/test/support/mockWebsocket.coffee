@@ -3,6 +3,8 @@ define ['backbone'], (Backbone)->
     
     connect: ->
 
+    notifyConversation: (contactId) ->
+
     emit: ->
 
     disconnect: ->

@@ -1,75 +1,85 @@
 define [
-    'jquery', 
-    'underscore', 
-    'backbone', 
+    'jquery',
+    'underscore',
+    'backbone',
     'views/messageHistoryView',
-    'views/emoticonsDialogView', 
+    'views/emoticonsDialogView',
     'models/messageModel',
-    'models/messageCollection',
     'text!./templates/conversationDialogTemplate.html',
+    'models/contact',
     'jqueryui',
     'jqueryAlert'
-  ], 
-  ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, MessageCollection, templateHtml) ->
+  ],
+  ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, templateHtml, Contact) ->
     class ConversationView extends Backbone.View
 
       template: _.template templateHtml
 
       initialize: (opt) ->
+        _.bindAll(@)
         @messageHistory = new MessageHistoryView()
         @emoticonsDialog = new EmoticonsDialogView()
+        @contact = opt.contact
+        @currentUser = opt.currentUser
         @websocket = opt.websocket
-        @mapExternalEvents()
+        @_mapExternalEvents()
+        @messageAreaId = "#message-area_#{@contact.get('id')}"
+        @sendButtonId = "#send-button_#{@contact.get('id')}"
+        @emoticonButtonId = "#emoticon-button_#{@contact.get('id')}"
+        @conversationHistoryId = "#conversation-history_#{@contact.get('id')}"
 
       events: ->
-        "click #send-button" : "sendMessage"
-        "keypress #message-area" : "handleEnterKey"
-        "click #emoticon-button" : "showEmoticonsAvailable"
-
-      mapExternalEvents: ->
-        @emoticonsDialog.on "emoticonSelected", @addEmoticonToMessage
-        self = @
-        @websocket.on "messageReceived", (message) ->
-          self.messageHistory.appendMessage new MessageModel(message)
+        eventHash = {}
+        eventHash["click #{@sendButtonId}"] = '_sendMessage'
+        eventHash["keypress #{@messageAreaId}"] = '_sendMessage'
+        eventHash["click #{@emoticonButtonId}"] = '_sendMessage'
+        eventHash
 
       render: ->
-        @$el.append @template
-        @messageHistory.setElement @$("#conversation-history")
+        @$el.attr "id", "conversation_#{@contact.get("id")}"
+        @$el.attr "class", "conversation-dialog"
+        @$el.attr "title", "#{@contact.get("name")} - Conversa"
+        @$el.html @template contactId: @contact.get("id")
+        @messageHistory.setElement @$(@conversationHistoryId)
         @messageHistory.render()
         @emoticonsDialog.render()
-        @renderDialog()
-        @renderButtons()
+        @_renderDialog()
+        @_renderButtons()
 
-      sendMessage: ->
-        @websocket.sendMessage author: "Marcos", recipient: "Daniela", body: $("#message-area").val()
-        $("#message-area").val ""
+      _mapExternalEvents: ->
+        @emoticonsDialog.on "emoticonSelected", @_addEmoticonToMessage
+        @websocket.on "messageReceived", (message) =>
+          @messageHistory.appendMessage new MessageModel(message)
 
-      handleEnterKey: (e) ->         
+      _sendMessage: (e) ->
+        @websocket.sendMessage author: @currentUser.get('name'), recipient: @contact.get('name'), body: @$(@messageAreaId).val()
+        @$(@messageAreaId).val ''
+
+      _handleEnterKey: (e) ->
         if e.which == 13 and not e.shiftKey
-          @sendMessage()
+          @_sendMessage()
           e.preventDefault()
 
-      showEmoticonsAvailable: ->
+      _showEmoticonsAvailable: ->
         @emoticonsDialog.show()
 
-      addEmoticonToMessage: (emoticon) ->
+      _addEmoticonToMessage: (emoticon) ->
         $("#message-area").val $("#message-area").val() + emoticon
 
-      renderButtons: ->
-        $('#send-button').button icons: primary: "ui-icon-mail-closed"
-        $("#emoticon-button").button icons: primary: "ui-icon-person"
+      _renderButtons: ->
+        $(@sendButtonId).button icons: primary: "ui-icon-mail-closed"
+        $(@emoticonButtonId).button icons: primary: "ui-icon-person"
 
-      renderDialog: ->
-        self = @
-        @$el.dialog
-          width: 400
-          resizable: yes
-          close: (event, ui) -> self.closeConversation self
+      _renderDialog: ->
+        d = @$("#master-div_#{@contact.get("id")}").dialog
+              width: 400
+              resizable: yes
+              autoOpen: no
+              close: (event, ui) => @_closeConversation
+        d.parent('.ui-dialog').appendTo @$el
+        d.dialog('open')
 
-      closeConversation: (self) ->
-        self.undelegateEvents()
-        self.$el.dialog( "destroy" )
-        self.websocket.disconnect()
-        self.$el.remove()
+      _closeConversation: ->
+        @trigger 'conversationClose', @contact.get("id")
 
     ConversationView

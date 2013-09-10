@@ -1,0 +1,14 @@
+<div id="friends-list">
+  <ul>
+    <%
+        _.each(contacts, function(contact, key, list){
+    %>
+      <li class="friend-contact <%=contact.status%>" id="contact_<%=contact.id%>" contactId="<%=contact.id%>"><%=contact.name%></li>
+    <%
+      });
+    %>
+  </ul>
+</div>
+<div id="conversation-area">
+
+</div>
