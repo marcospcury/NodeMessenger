@@ -22,6 +22,7 @@ define [
       initialize: (opt) ->
         @websocket = opt.websocket
         @contacts = opt.contacts
+        @currentUser = opt.currentUser
         @conversationsOpen = new Backbone.Collection()
         @websocket.connect("status-online")
         @_mapExternalEvents()
@@ -38,9 +39,9 @@ define [
         @websocket.notifyConversation contact.get("id")
 
       _renderConversationView: (contact) ->
-        conversationView = new ConversationView contact: contact , websocket: @websocket
+        conversationView = new ConversationView contact: contact , websocket: @websocket, currentUser: @currentUser
         conversationView.render()
-        conversationView.on 'conversationClose', (contactId) =>
+        @listenTo conversationView, 'conversationClose', (contactId) =>
           @_handlesEndingConversation contactId
         @$("#conversation-area").append conversationView.$el
         @conversationsOpen.add id: contact.get("id"), dialog: conversationView
@@ -60,6 +61,8 @@ define [
       _handlesEndingConversation: (contactId) ->
         dialog = @conversationsOpen.get(contactId).get("dialog")
         dialog.remove()
+        object = @conversationsOpen.get(contactId)
+        @conversationsOpen.remove(object)
 
       _handlesFriendStatusChange: (eventArgs) ->
         contact = @contacts.get(eventArgs.contactId)

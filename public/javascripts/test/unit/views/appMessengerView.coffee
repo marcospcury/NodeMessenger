@@ -57,6 +57,11 @@ define [
       it 'notifies friend about the conversation', ->
         expect(websocket.notifyConversation.calledWithMatch(contacts.get(1).get("id"))).to.be.true
 
+      it 'checks if theres already a conversation open with the friend', ->
+        $('.friend-contact:first', appMessengerView.el).trigger 'dblclick'
+        expect($('#conversation-area > .conversation-dialog', appMessengerView.el).length).to.equal 1
+
+
     describe 'When a friend starts a conversation', ->
       it 'renders the conversation view with unique id', ->
         websocket.trigger "conversationNotification", contacts.get(1).get("id")
@@ -67,9 +72,11 @@ define [
         $('.friend-contact:first', appMessengerView.el).trigger 'dblclick'
         appMessengerView.conversationsOpen.get('1').get("dialog").trigger 'conversationClose', '1'
         expect($('#conversation-area > .conversation-dialog', appMessengerView.el).length).to.equal 0
+        expect(appMessengerView.conversationsOpen.get('1')).to.equal undefined
 
     describe 'When a friend closes a conversation', ->
       it 'removes the dialog from screen and memory', ->
         websocket.trigger "conversationNotification", contacts.get(1).get("id")
         websocket.trigger "conversationEndNotification", contacts.get(1).get("id")
         expect($('#conversation-area > .conversation-dialog', appMessengerView.el).length).to.equal 0
+        expect(appMessengerView.conversationsOpen.get('1')).to.equal undefined

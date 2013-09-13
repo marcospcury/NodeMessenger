@@ -9,11 +9,14 @@ requirejs.config
     sinon: 'lib/sinon/lib/sinon'
     socketio: '../../socket.io/socket.io'
     jqueryAlert: 'lib/jquery.titlealert.min'
+    twitterBoostrap: 'lib/bootstrap/dist/js/bootstrap'
   shim:
     'jqueryui':
       deps: ['jquery']
       exports: 'jqueryui'
     'jqueryAlert':
+      deps: ['jquery']
+    'twitterBoostrap':
       deps: ['jquery']
     'underscore':
       exports: '_'

@@ -1,6 +1,6 @@
 define [
-    'jquery', 
-    'underscore', 
+    'jquery',
+    'underscore',
     'backbone',
     'text!./templates/messageHistoryTemplate.html'
   ], ($, _, Backbone, templateHtml) ->
@@ -11,8 +11,8 @@ define [
 
       appendMessage: (message) ->
         @$el.append @template message.toJSON()
-        @$el.animate 
-          scrollTop: @$el.prop("scrollHeight"), 
-          500        
+        @$el.animate
+          scrollTop: @$el.prop("scrollHeight"),
+          500
         
     MessageHistoryView

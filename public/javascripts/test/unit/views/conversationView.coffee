@@ -35,7 +35,7 @@ define [
         expect($('#conversation-history_1', el).html()).to.equal ''
 
       it 'renders conversation title', ->
-        expect(el.attr 'title').to.equal 'Contact 1 - Conversa'
+        expect($('.modal-header > h3', el).html()).to.equal 'Contact 1 - Conversa'
 
     describe 'When user sends a message', ->
       before ->

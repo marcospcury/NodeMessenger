@@ -8,7 +8,8 @@ define [
     'text!./templates/conversationDialogTemplate.html',
     'models/contact',
     'jqueryui',
-    'jqueryAlert'
+    'jqueryAlert',
+    'twitterBoostrap'
   ],
   ($, _, Backbone, MessageHistoryView, EmoticonsDialogView, MessageModel, templateHtml, Contact) ->
     class ConversationView extends Backbone.View
@@ -25,26 +26,28 @@ define [
         @_mapExternalEvents()
         @messageAreaId = "#message-area_#{@contact.get('id')}"
         @sendButtonId = "#send-button_#{@contact.get('id')}"
+        @closeButtonId = "#close_#{@contact.get('id')}"
         @emoticonButtonId = "#emoticon-button_#{@contact.get('id')}"
         @conversationHistoryId = "#conversation-history_#{@contact.get('id')}"
+        @masterDivId = "#master-div_#{@contact.get('id')}"
 
       events: ->
         eventHash = {}
         eventHash["click #{@sendButtonId}"] = '_sendMessage'
-        eventHash["keypress #{@messageAreaId}"] = '_sendMessage'
-        eventHash["click #{@emoticonButtonId}"] = '_sendMessage'
+        eventHash["keypress #{@messageAreaId}"] = '_handleEnterKey'
+        eventHash["click #{@emoticonButtonId}"] = '_showEmoticonsAvailable'
+        eventHash["click #{@closeButtonId}"] = '_closeConversation'
         eventHash
 
       render: ->
         @$el.attr "id", "conversation_#{@contact.get("id")}"
         @$el.attr "class", "conversation-dialog"
-        @$el.attr "title", "#{@contact.get("name")} - Conversa"
         @$el.html @template contactId: @contact.get("id")
         @messageHistory.setElement @$(@conversationHistoryId)
         @messageHistory.render()
         @emoticonsDialog.render()
-        @_renderDialog()
-        @_renderButtons()
+        @$(@masterDivId).draggable()
+        @$(".modal-header > h3").html "#{@contact.get("name")} - Conversa"
 
       _mapExternalEvents: ->
         @emoticonsDialog.on "emoticonSelected", @_addEmoticonToMessage
@@ -65,19 +68,6 @@ define [
 
       _addEmoticonToMessage: (emoticon) ->
         $("#message-area").val $("#message-area").val() + emoticon
-
-      _renderButtons: ->
-        $(@sendButtonId).button icons: primary: "ui-icon-mail-closed"
-        $(@emoticonButtonId).button icons: primary: "ui-icon-person"
-
-      _renderDialog: ->
-        d = @$("#master-div_#{@contact.get("id")}").dialog
-              width: 400
-              resizable: yes
-              autoOpen: no
-              close: (event, ui) => @_closeConversation
-        d.parent('.ui-dialog').appendTo @$el
-        d.dialog('open')
 
       _closeConversation: ->
         @trigger 'conversationClose', @contact.get("id")
